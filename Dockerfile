@@ -4,7 +4,7 @@ FROM centos:8
 # ADD oci8.pc /usr/lib/pkgconfig/oci8.pc
 
 # Install Oracle Client (all commands in one RUN to save image size)
-RUN dnf update && dnf install -y --no-install-recommends \
+RUN dnf update -y && dnf install -y  \
 	unzip \
 	libaio1 \
 

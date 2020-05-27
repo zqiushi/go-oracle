@@ -1,7 +1,7 @@
-FROM golang:1.13.11
+FROM centos:8
 
 # Required for building the Oracle DB driver
-ADD oci8.pc /usr/lib/pkgconfig/oci8.pc
+# ADD oci8.pc /usr/lib/pkgconfig/oci8.pc
 
 # Install Oracle Client (all commands in one RUN to save image size)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 	&& apt-get clean \
         && rm -rf /var/lib/apt/lists/* \
+	
+	&& wget -P /usr/lib/pkgconfig/ https://github.com/zqiushi/go-oracle/blob/master/oci8.pc \
 
         && wget https://github.com/zqiushi/go-oracle/raw/master/instantclient-basic-linux.x64-11.2.0.4.0.zip \
 	&& wget https://github.com/zqiushi/go-oracle/raw/master/instantclient-sdk-linux.x64-11.2.0.4.0.zip \

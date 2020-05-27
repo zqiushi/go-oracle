@@ -1,4 +1,4 @@
-FROM golang:alpine3.11
+FROM golang:1.13.11
 
 # Required for building the Oracle DB driver
 ADD oci8.pc /usr/lib/pkgconfig/oci8.pc

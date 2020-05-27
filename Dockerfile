@@ -1,4 +1,4 @@
-FROM golang:1.8
+FROM golang:1.13.11
 
 # Required for building the Oracle DB driver
 ADD oci8.pc /usr/lib/pkgconfig/oci8.pc
@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& apt-get clean \
         && rm -rf /var/lib/apt/lists/* \
 
-        && wget https://github.com/thbono/go-oracle/raw/master/instantclient-basic-linux.x64-11.2.0.4.0.zip \
-	&& wget https://github.com/thbono/go-oracle/raw/master/instantclient-sdk-linux.x64-11.2.0.4.0.zip \
+        && wget https://github.com/zqiushi/go-oracle/raw/master/instantclient-basic-linux.x64-11.2.0.4.0.zip \
+	&& wget https://github.com/zqiushi/go-oracle/raw/master/instantclient-sdk-linux.x64-11.2.0.4.0.zip \
 
 	&& unzip instantclient-basic-linux.x64-*.zip -d / \
     	&& unzip instantclient-sdk-linux.x64-*.zip -d / \

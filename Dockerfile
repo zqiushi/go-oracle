@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         && wget https://github.com/zqiushi/oracle-instantclient/blob/master/instantclient-basic-linux.x64-12.2.0.1.0.zip \
 	&& wget https://github.com/zqiushi/oracle-instantclient/blob/master/instantclient-sdk-linux.x64-12.2.0.1.0.zip \
 
-	&& unzip instantclient-basic-linux.x64-*.zip -d / \
-    	&& unzip instantclient-sdk-linux.x64-*.zip -d / \
+	&& unzip instantclient-basic-linux.x64-12.2.0.1.0.zip -d / \
+    	&& unzip instantclient-sdk-linux.x64-12.2.0.1.0.zip -d / \
 
 	&& rm instantclient-*-linux.x64-*.zip \
 		&& ln -s /instantclient_12_2/libclntsh.so.12.1 /instantclient/libclntsh.so

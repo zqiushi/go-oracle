@@ -1,4 +1,4 @@
-prefix=/instantclient_11_2
+prefix=/usr/local/instantclient
 libdir=${prefix}
 includedir=${prefix}/sdk/include
 
@@ -7,4 +7,4 @@ Description: oci8 library
 Libs: -L${libdir} -lclntsh
 Libs.private:
 Cflags: -I${includedir}
-Version: 11.2
+Version: 12.2

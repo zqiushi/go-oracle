@@ -21,7 +21,7 @@ RUN ln -s /usr/local/instantclient_12_2 /usr/local/instantclient && \
 
 
 # The package config doesn't seem to be enough, this is also required
-ENV LD_LIBRARY_PATH /instantclient_12_2
+ENV LD_LIBRARY_PATH /usr/local/instantclient
 
 # Get ora dep
 RUN go get -d -v gopkg.in/rana/ora.v4
